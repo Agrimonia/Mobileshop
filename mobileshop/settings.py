@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'backend', # 这里要把之前创建的 app 加入 installed_apps 列表
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'mobileshop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['frontend/dist'], # 这里要修改成前端的 dist 目录
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,10 +74,12 @@ WSGI_APPLICATION = 'mobileshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {
+DATABASES = { # 将自带的 sqlite3 替换为 mysql，这里我用了 Option Files，你需要在目录下新建一个 mysql.cnf 文件。详情见：https://dev.mysql.com/doc/refman/5.7/en/option-files.html
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': './mysql.cnf',
+        },
     }
 }
 
@@ -118,3 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+# Add for Vue.js
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    'frontend/dist/static/',
+]

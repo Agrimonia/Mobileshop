@@ -162,3 +162,4 @@ typings/
 # dotenv environment variables file
 .env
 
+.cnf

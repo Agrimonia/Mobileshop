@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.views.generic import TemplateView
+from django.conf.urls import include
+import backend.urls #如果这里不 import，底下的 backend.urls 要加引号
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(backend.urls)),
+    #使用通用视图创建最简单的模板控制器，访问 / 时直接返回 index.html:
+    url(r'^$', TemplateView.as_view(template_name="index.html")),
 ]
