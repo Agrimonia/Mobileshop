@@ -36,8 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'backend', # 这里要把之前创建的 app 加入 installed_apps 列表
+    'django.contrib.staticfiles', 
+    'backend',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mobileshop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['frontend/dist'], # 这里要修改成前端的 dist 目录
+        'DIRS': ['frontend/dist'], # 这里要修改成前端编译得到的 dist 目录
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'mobileshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = { # 将自带的 sqlite3 替换为 mysql，这里我用了 Option Files，你需要在目录下新建一个 mysql.cnf 文件。详情见：https://dev.mysql.com/doc/refman/5.7/en/option-files.html
+DATABASES = {  # 将自带的 sqlite3 替换为 mysql，这里我用了 Option Files，你需要在目录下新建一个 mysql.cnf 文件（可以在 mysql.cnf.default 里修改然后改名）。详情见：https://docs.djangoproject.com/en/1.11/ref/databases/#connecting-to-the-database
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
@@ -82,7 +82,6 @@ DATABASES = { # 将自带的 sqlite3 替换为 mysql，这里我用了 Option Fi
         },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

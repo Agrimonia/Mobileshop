@@ -19,7 +19,7 @@ cd Mobileshop
 
 ### 2. 测试
 
-> 需要在本地建一个数据库，然后配置 mysql.cnf
+> 需要在本地建一个数据库，然后配置 mysql.cnf
 ```
 pip install -r requirements.txt
 cd frontend
@@ -30,47 +30,11 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-## 目录结构
+### 3. 开发进度
 
-```
-.
-├── LICENSE
-├── README.md
-├── backend
-│   ├── __init__.py
-│   ├── __pycache__
-│   ├── admin.py
-│   ├── apps.py
-│   ├── migrations
-│   ├── models.py
-│   ├── tests.py
-│   ├── urls.py
-│   └── views.py
-├── favicon.ico
-├── frontend
-│   ├── README.md
-│   ├── build
-│   ├── config
-│   ├── dist
-│   ├── index.html
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── src
-│   ├── static
-│   └── test
-├── manage.py
-├── mobileshop
-│   ├── __init__.py
-│   ├── __pycache__
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── mysql.cnf
-├── mysql.cnf.default
-└── venv
-    ├── bin
-    ├── include
-    ├── lib
-    ├── pip-selfcheck.json
-    └── pyvenv.cfg
-```
+- [x] Hello World
+- [x] 数据库换成 MySQL，用 Postman 测试接口可用
+- [ ] 根据需求设计数据库
+- [ ] 完成前端部分页面设计
+- [ ] 重写 models 和 views
+- [ ] 完成前端开发（想用 `Vant` ）
