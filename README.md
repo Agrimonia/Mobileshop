@@ -1,9 +1,12 @@
 # Mobileshop
 
-一个手机网页端商城Demo (Vue + Django)
+一个手机网页端商城 Demo (Vue + Django)
+
 运行环境：
-Python 3.6.3
-Django 1.11.7
+- Python 3.6.3
+- Django 1.11.7
+
+建议开 Virtualenv 跑
 
 ## 开始
 
@@ -16,6 +19,7 @@ cd Mobileshop
 
 ### 2. 测试
 
+> 需要在本地建一个数据库，然后配置 mysql.cnf
 ```
 pip install -r requirements.txt
 cd frontend
@@ -28,6 +32,7 @@ python manage.py runserver
 
 ## 目录结构
 
+```
 .
 ├── LICENSE
 ├── README.md
@@ -68,3 +73,4 @@ python manage.py runserver
     ├── lib
     ├── pip-selfcheck.json
     └── pyvenv.cfg
+```
