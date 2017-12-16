@@ -30,7 +30,7 @@ npm run dev
 ```
 
 ```bash
-# 后端部分
+# 后端部分
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
@@ -41,7 +41,7 @@ python manage.py runserver
 - [x] Hello World
 - [x] 数据库换成 MySQL，用 Postman 测试接口可用
 - [ ] 根据需求设计数据库
-- [ ] 用户注册登录
+- [ ] 用户注册登录
 - [ ] 商品管理
 - [ ] 前端浏览、购买商品
 - [ ] 生产环境部署
