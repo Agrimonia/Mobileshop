@@ -1,36 +1,34 @@
-from django.shortcuts import render
-from django.views.decorators.http import require_http_methods
-from django.http import JsonResponse
-from backend.models import Book
-from django.core import serializers # 之后换成 Django REST Framework
 import json
+from rest_framework import status
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+from backend.helpers import InputErrorMessage, JSONResponse
+from .models import Product, ProductSerializer
+
 
 # Create your views here.
-@require_http_methods(["GET"])
-def add_book(request):
-    response = {}
-    try:
-        book = Book(book_name=request.GET.get('book_name'))
-        book.save()
-        response['msg'] = 'success'
-        response['error_num'] = 0
-    except Exception as e:
-        response['msg'] = str(e)
-        response['error_num'] = 1
-
-    return JsonResponse(response)
+class ProductList(APIView):
+    def get(self, request, format=None):
+        products = Product.objects.all()
+        serializer = ProductSerializer(products, many=True)
+        return JSONResponse(serializer.data)
 
 
-@require_http_methods(["GET"])
-def show_books(request):
-    response = {}
-    try:
-        books = Book.objects.filter()
-        response['list'] = json.loads(serializers.serialize("json", books))
-        response['msg'] = 'success'
-        response['error_num'] = 0
-    except Exception as e:
-        response['msg'] = str(e)
-        response['error_num'] = 1
-
-    return JsonResponse(response)
+"""
+    def post(self, request):
+        
+        希望的输入：(UTF-8 coded)
+            {
+                "products": {
+                    "name": shoes,
+                    "price": 324.10
+                },
+            }
+        
+        try:
+            data = json.loads(request.body.decode('utf-8'))
+        except json.JSONDecodeError:
+            return InputErrorMessage("Invalid JSON body")
+        products = 
+"""

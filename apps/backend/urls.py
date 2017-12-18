@@ -1,8 +1,7 @@
 from django.conf.urls import url, include
-from . import views
+from .views import ProductList
 
 urlpatterns = [
     url(r'^user/', include('user.urls')),
-    url(r'add_book$', views.add_book, ),
-    url(r'show_books$', views.show_books, ),
+    url(r'^$', ProductList.as_view()),
 ]

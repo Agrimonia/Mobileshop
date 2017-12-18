@@ -20,12 +20,18 @@ cd Mobileshop
 ### 2. 测试
 
 > 需要在本地建一个数据库，然后配置 mysql.cnf
-```
-pip install -r requirements.txt
-cd frontend
+```bash
+# 前端部分
+cd apps/frontend
 npm install
-npm run build
-cd ..
+npm build
+npm run dev
+```
+
+```bash
+# 后端部分
+cd ~/mobileshop
+pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 ```
@@ -34,7 +40,8 @@ python manage.py runserver
 
 - [x] Hello World
 - [x] 数据库换成 MySQL，用 Postman 测试接口可用
-- [ ] 根据需求设计数据库
-- [ ] 完成前端部分页面设计
-- [ ] 重写 models 和 views
-- [ ] 完成前端开发（想用 `Vant` ）
+- [x] 根据需求设计数据库
+- [ ] 用户注册登录
+- [ ] 浏览、购买商品
+- [ ] 商品管理
+- [ ] 生产环境部署
