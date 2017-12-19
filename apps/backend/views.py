@@ -18,10 +18,9 @@ class ProductList(APIView):
         """
         希望的输入：(UTF-8 coded)
             {
-                "products": {
-                    "name": shoes,
-                    "price": 324.10
-                },
+                "name": "shoes",
+                "price": 324.10
+                "img": "https://xxxx/xxx/xxx"
             }
         """
         try:
@@ -34,7 +33,7 @@ class ProductList(APIView):
             return InputErrorMessage("Product name is used.")
         if "price" not in data:
             return InputErrorMessage("Product price not provide.")
-        products = Product.objects.create(name=data["name"], price=data["price"])
+        products = Product.objects.create(name=data["name"], price=data["price"], img=data["img"])
         products.save()
         return JSONResponse({
             "code": 200,

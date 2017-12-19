@@ -6,9 +6,9 @@ from rest_framework import serializers
 class Product(models.Model):
     name = models.CharField(max_length=64)
     price = models.DecimalField(max_digits=7, decimal_places=2)
-    # img = models.ImageField()
+    img = models.ImageField()
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ('id', 'name', 'price')
+        fields = ('id', 'name', 'price', 'img')
