@@ -60,7 +60,7 @@ ROOT_URLCONF = 'mobileshop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['frontend/dist'], # 这里要修改成前端编译得到的 dist 目录
+        'DIRS': ['apps/frontend/dist'], # 这里要修改成前端编译得到的 dist 目录
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

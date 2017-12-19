@@ -14,10 +14,8 @@ class ProductList(APIView):
         serializer = ProductSerializer(products, many=True)
         return JSONResponse(serializer.data)
 
-
-"""
     def post(self, request):
-        
+        """
         希望的输入：(UTF-8 coded)
             {
                 "products": {
@@ -25,10 +23,14 @@ class ProductList(APIView):
                     "price": 324.10
                 },
             }
-        
+        """
         try:
             data = json.loads(request.body.decode('utf-8'))
         except json.JSONDecodeError:
             return InputErrorMessage("Invalid JSON body")
-        products = 
-"""
+        products = Product.objects.create(name=data["name"], price=data["price"])
+        products.save()
+        return JSONResponse({
+            "code": 200,
+            "message": "Success!",
+        })
