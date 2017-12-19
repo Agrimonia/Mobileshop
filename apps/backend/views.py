@@ -28,6 +28,12 @@ class ProductList(APIView):
             data = json.loads(request.body.decode('utf-8'))
         except json.JSONDecodeError:
             return InputErrorMessage("Invalid JSON body")
+        if "name" not in data:
+            return InputErrorMessage("Product name not provide.")
+        if Product.objects.filter(name=data["name"]).exists():
+            return InputErrorMessage("Product name is used.")
+        if "price" not in data:
+            return InputErrorMessage("Product price not provide.")
         products = Product.objects.create(name=data["name"], price=data["price"])
         products.save()
         return JSONResponse({
