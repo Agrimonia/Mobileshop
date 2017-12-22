@@ -133,3 +133,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     'apps/frontend/dist/static/',
 ]
+
+MEDIA_ROOT = "media/"

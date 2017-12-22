@@ -10,6 +10,20 @@ from .models import Product, ProductSerializer
 # Create your views here.
 class ProductList(APIView):
     def get(self, request, format=None):
+        """
+        预期：
+        {
+            "data": [
+            {
+                    "id": 1,
+                    "name": "jacket1",
+                    "price": "122.00",
+                    "img": "media/jacket1.png"
+                }
+            ],
+            "code": 200
+        }
+        """
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
         return JSONResponse(serializer.data)
@@ -19,8 +33,8 @@ class ProductList(APIView):
         希望的输入：(UTF-8 coded)
             {
                 "name": "shoes",
-                "price": 324.10
-                "img": "https://xxxx/xxx/xxx"
+                "price": 324.10,
+                "img": "media/jacket1.png"
             }
         """
         try:
@@ -33,7 +47,10 @@ class ProductList(APIView):
             return InputErrorMessage("Product name is used.")
         if "price" not in data:
             return InputErrorMessage("Product price not provide.")
-        products = Product.objects.create(name=data["name"], price=data["price"], img=data["img"])
+        if "img" not in data:
+            return InputErrorMessage("Product image not provide.")
+        products = Product.objects.create(
+            name=data["name"], price=data["price"], img=data["img"])
         products.save()
         return JSONResponse({
             "code": 200,
