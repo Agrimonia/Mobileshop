@@ -19,10 +19,11 @@ cd Mobileshop
 
 ### 2. 测试
 
-> 需要在本地建一个数据库，然后配置 mysql.cnf
+> Dev 分支在本地测试用 SQLite3 即可，master 分支用 mysql 需要配置 mysql.cnf
+
 ```bash
 # 前端部分
-cd apps/frontend
+cd frontend
 npm install
 npm build
 npm run dev
@@ -30,7 +31,7 @@ npm run dev
 
 ```bash
 # 后端部分
-cd ~/mobileshop
+
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
@@ -40,8 +41,8 @@ python manage.py runserver
 
 - [x] Hello World
 - [x] 数据库换成 MySQL，用 Postman 测试接口可用
-- [x] 根据需求设计数据库
+- [ ] 根据需求设计数据库
 - [ ] 用户注册登录
-- [ ] 浏览、购买商品
 - [ ] 商品管理
+- [ ] 前端浏览、购买商品
 - [ ] 生产环境部署
