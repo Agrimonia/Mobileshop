@@ -11,9 +11,12 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -26,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = 'user.User' # 重新封装了 user 后加上这句，不然会报错
+AUTH_USER_MODEL = 'user.User'  # 重新封装了 user 后加上这句，不然会报错
 
 # Application definition
 
@@ -57,7 +60,7 @@ ROOT_URLCONF = 'mobileshop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['frontend/dist'], # 这里要修改成前端编译得到的 dist 目录
+        'DIRS': ['apps/frontend/dist'], # 这里要修改成前端编译得到的 dist 目录
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,12 +79,15 @@ WSGI_APPLICATION = 'mobileshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {  # 将自带的 sqlite3 替换为 mysql，这里我用了 Option Files，你需要在目录下新建一个 mysql.cnf 文件（可以在 mysql.cnf.default 里修改然后改名）。详情见：https://docs.djangoproject.com/en/1.11/ref/databases/#connecting-to-the-database
+DATABASES = {
+    # 本地测试用 sqlite3，生产环境换成 mysql
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': './mysql.cnf',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.mysql',
+        #'OPTIONS': {
+        #    'read_default_file': './mysql.cnf',
+        #},
     }
 }
 
@@ -125,5 +131,7 @@ STATIC_URL = '/static/'
 # Add for Vue.js
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    'frontend/dist/static/',
+    'apps/frontend/dist/static/',
 ]
+
+MEDIA_ROOT = "media/"

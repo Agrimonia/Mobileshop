@@ -31,6 +31,7 @@ npm run dev
 
 ```bash
 # 后端部分
+
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
