@@ -1,6 +1,6 @@
 <template>
   <main class="capsule">
-    <app-banner/>
+    <app-banner img="banner-ppl" title="男装" bkcolor="#474598"/>
     <div class="contain">
       <aside-filter :pricerange.sync="highprice"/>
       <transition-group name="items" tag="section" class="content">

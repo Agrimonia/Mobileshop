@@ -1,6 +1,6 @@
 <template>
   <main class="capsule">
-    <app-banner/>
+    <app-banner img="bk-sale" title="促销" bkcolor="#1ba079"/>
     <div class="contain">
       <aside-filter :pricerange.sync="highprice" :sale="true"/>
       <transition-group name="items" tag="section" class="content">
