@@ -163,3 +163,6 @@ typings/
 .env
 
 .cnf
+
+# editor config file
+.vscode/
