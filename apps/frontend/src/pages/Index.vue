@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import AsideFilter from './AsideFilter';
-import AppBanner from './AppBanner';
-import ProductItem from './ProductItem';
+import AsideFilter from '@/components/AsideFilter';
+import AppBanner from '@/components/AppBanner';
+import ProductItem from '@/components/ProductItem';
 
 export default {
   components: {

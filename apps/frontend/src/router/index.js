@@ -1,8 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Index from '@/components/Index';
-import Cart from '@/components/Cart';
-import Checkout from '@/components/Checkout';
+import Index from '@/pages/Index';
+import Men from '@/pages/Men';
+import Women from '@/pages/Women';
+import Sale from '@/pages/Sale';
+import Cart from '@/pages/Cart';
 
 Vue.use(Router);
 
@@ -14,14 +16,24 @@ export default new Router({
       component: Index,
     },
     {
+      path: '/men',
+      name: 'Men',
+      component: Men,
+    },
+    {
+      path: '/women',
+      name: 'Women',
+      component: Women,
+    },
+    {
+      path: '/sale',
+      name: 'Sale',
+      component: Sale,
+    },
+    {
       path: '/cart',
       name: 'Cart',
       component: Cart,
-    },
-    {
-      path: '/Checkout',
-      name: 'Checkout',
-      component: Checkout,
     },
   ],
 });
