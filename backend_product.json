@@ -1,0 +1,124 @@
+{
+    "RECORDS": [
+        {
+            "id": "1",
+            "name": "绒面靴",
+            "price": "149.99",
+            "article": "shoe",
+            "category": "women",
+            "img": "shoe1.png",
+            "sale": "1",
+            "NAVICAT_ROWID": "1"
+        },
+        {
+            "id": "2",
+            "name": "花纹棉夹克",
+            "price": "39.99",
+            "article": "jacket",
+            "category": "women",
+            "img": "jacket1.png",
+            "sale": "0",
+            "NAVICAT_ROWID": "2"
+        },
+        {
+            "id": "3",
+            "name": "长款黑夹克",
+            "price": "49.99",
+            "article": "jacket",
+            "category": "men",
+            "img": "jacket2.png",
+            "sale": "1",
+            "NAVICAT_ROWID": "3"
+        },
+        {
+            "id": "4",
+            "name": "黑色棉帽",
+            "price": "12.99",
+            "article": "hats",
+            "category": "men",
+            "img": "hat1.png",
+            "sale": "1",
+            "NAVICAT_ROWID": "4"
+        },
+        {
+            "id": "5",
+            "name": "青色针织衫",
+            "price": "29.99",
+            "article": "sweater",
+            "category": "women",
+            "img": "sweater1.png",
+            "sale": "0",
+            "NAVICAT_ROWID": "5"
+        },
+        {
+            "id": "6",
+            "name": "蓝白格子衬衫",
+            "price": "18.99",
+            "article": "shirt",
+            "category": "men",
+            "img": "shirt1.png",
+            "sale": "0",
+            "NAVICAT_ROWID": "6"
+        },
+        {
+            "id": "7",
+            "name": "橙色针织衫",
+            "price": "28.99",
+            "article": "sweater",
+            "category": "men",
+            "img": "sweater2.png",
+            "sale": "0",
+            "NAVICAT_ROWID": "7"
+        },
+        {
+            "id": "8",
+            "name": "经典浅蓝衬衫",
+            "price": "49.99",
+            "article": "shirt",
+            "category": "men",
+            "img": "shirt2.png",
+            "sale": "0",
+            "NAVICAT_ROWID": "8"
+        },
+        {
+            "id": "9",
+            "name": "迷彩夹克",
+            "price": "59.99",
+            "article": "jacket",
+            "category": "women",
+            "img": "jacker3.png",
+            "sale": "1",
+            "NAVICAT_ROWID": "9"
+        },
+        {
+            "id": "10",
+            "name": "金色薄夹克",
+            "price": "129.99",
+            "article": "jacket",
+            "category": "women",
+            "img": "jacker4.png",
+            "sale": "0",
+            "NAVICAT_ROWID": "10"
+        },
+        {
+            "id": "11",
+            "name": "绿色羊毛衫",
+            "price": "80.99",
+            "article": "sweater",
+            "category": "women",
+            "img": "sweater4.png",
+            "sale": "0",
+            "NAVICAT_ROWID": "11"
+        },
+        {
+            "id": "12",
+            "name": "灰色羊毛衫",
+            "price": "59.99",
+            "article": "sweater",
+            "category": "men",
+            "img": "sweater5.png",
+            "sale": "1",
+            "NAVICAT_ROWID": "12"
+        }
+    ]
+}
