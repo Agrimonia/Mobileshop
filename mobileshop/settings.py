@@ -27,7 +27,7 @@ SECRET_KEY = '027_qkg=wuh+7k+u&mv_(fw2yxg@3o-&i&m2nmaa7nwuvxza6c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','192.168.1.109','localhost']
 
 AUTH_USER_MODEL = 'user.User'  # 重新封装了 user 后加上这句，不然会报错
 
@@ -113,9 +113,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans' # 设置语言为中文
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai' # 设置时区
 
 USE_I18N = True
 
