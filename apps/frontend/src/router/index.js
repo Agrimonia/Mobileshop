@@ -5,6 +5,8 @@ import Men from '@/pages/Men';
 import Women from '@/pages/Women';
 import Sale from '@/pages/Sale';
 import Cart from '@/pages/Cart';
+import Login from '@/pages/Login';
+import SignUp from '@/pages/SignUp';
 
 Vue.use(Router);
 
@@ -46,9 +48,13 @@ export default new Router({
     },
     {
       path: '/login',
+      name: 'Login',
+      component: Login,
     },
     {
       path: '/signup',
+      name: 'SignUp',
+      component: SignUp,
     },
   ],
 });

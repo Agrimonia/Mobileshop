@@ -4,7 +4,7 @@
       <div class="capsule">
         <router-link to="/">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	          width="45px" height="50px" enable-background="new 0 0 130 130" viewBox="0 0 396 396" style="enable-background:new 0 0 394 396;" xml:space="preserve">
+	          width="30px" height="50px" enable-background="new 0 0 130 130" viewBox="0 0 396 396" style="enable-background:new 0 0 394 396;" xml:space="preserve">
             <g transform="translate(0.000000,396.000000) scale(0.100000,-0.100000)">
 	            <path class="st0" d="M1755,3784C998,3682,392,3140,205,2400C18,1661,324,866,959,439c630-424,1432-424,2062,0
 		          c375,252,642,634,754,1081c187,739-119,1534-754,1961C2646,3733,2188,3843,1755,3784z M2305,3710c172-34,281-67,424-130
@@ -48,6 +48,9 @@
               <path fill="black" d="M8.01 10c-1.104 0-2 .896-2 2 0 1.105.896 2 2 2h10.376l10.53 49.813c-.107 1.14.952 2.245 2.095 2.187h50c1.057.015 2.03-.943 2.03-2s-.973-2.015-2.03-2H32.637l-1.688-8H85.01c.896-.01 1.742-.69 1.938-1.562l7-30c.26-1.16-.748-2.43-1.937-2.438H23.76l-1.78-8.437c-.2-.884-1.063-1.57-1.97-1.563zm16.594 14H89.51l-6.093 26H30.104zM42.01 72c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm28 0c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm-28 4c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5zm28 0c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5z"/>
             </svg>
           </div>
+        </router-link>
+        <router-link to="/me">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASOSURBVFhH5ZhpqBZVGIBvWalZVKaZ1o8gUqJc0NIsI0raKEXECnPPBa2whZJ+pS0Q0kJYtGtp+UcpLCLRH7nmQuKKmEalFGRlq1Zmaj3P8Q7e73POzPmu1/rhAw/cM3e+mTNn3vOe90zd8UA7vAZvw3E4Egdid2yF/zknYl98Db/Cfwrcj6vwMbwQjykn4V24Db35PlyGT+Kd6Cj2wMvwJhyPL+Nn6PkH8UPsiU3O5bgOvdGXOBHbYiqd8QX8He3om3gWNgkPoKP1M96DjmRjOQdnoJ3cgUc1msaaT+2oLcXzMI/TcAhORkfmFZyAZ2KMG/B7dERv9UBjeAnt3Nt4sgeq8NjTuBs9T/9EJ4Z//4DO5paYxwW4Ff/C6zxQCw+iN3kHT/BAFafgEvScOXg9tkFx5HvjJvT/P+JwzKMDfo4+5MUeSMG48Kl8rXYkj0fRm98bWvnY4RG4EY05Z3YenfA39IGae6AIJ4Cz1QkRizlf7S/4cWiVYyzuxNWhlY8j7AP74IWMRk+8O7Ty6YOe46qRyrPob4pSiw/8B54bWjkYO8aDea4olQxGb3Z1aKUxCv3NFaGVj6HlOVNDKweXL0+4L7TijEXP6xJaaQxFf3NVaMUx7r/DvKxRNx1NyNlsjGHq8Ga1pIaH0d9cFFpxXEo978bQqmI7mjrKcNnzIlYtqbyFxlfuyDTAysgZb36toD16Uxf+Mlrg3/hiaKVhXKc8vGzB5Yf+PIyViB10ySrDImEPfhJa5ZiMHZUFoVXOe7jr0J+HsVyygykz08I0GicRsmUzlvgb8jweca45zYPdQqsYF3rPTRntjLnoctYstIp5HL1+69CqJ5s9ToAyLONNBa6xgzxQgrFqAWHRkcJTaF/OCK16bkcPmgtTsAB1uXN2FmHC90FcJYrKr4a8igewokixVLeDlump+NqcLEWVtWHgde8IrTQWoimvgtPR12Awp2JJ5ex8F/OWxvPxW/RmKZNDHDXDx73LEaxBc1AtuG46Qg+FViWLcC+awlK5BL3epNCq4gn0n8ZXKhaZ/sYSv5plaC1YC25Po33oiP5zWmil4YViHZyPVkepGCaGw/rQivARGvjuvlK4Be2gFU41H6CFr5uqFFzbvZYpL8qVaOC/EVpxTkVnvB2wWq5IqvX0Q2/4KbpnydvbZPgQ3+AXWDqhZqKdHBBalVgDPofmNm/uV4OiunAM+kY8dzO6x7ZiqcZ86jm+kVLORjfVv+KlaGxYEW9AL6IWCsOwqPLOMFwMfq/pb01n72NWvN6PHi9L+hX0QjfVBvla9ALmJ9fJsqIzhlsKU45vyF2jb2ke2mFnu2FTE/3RCtvOufw05ac0N+3ZvtlBsCRrFDejMWQ17HeZokBPxTV5Nto53050F5eKcegK4wUX47XYGKzEzZdfo9fyO07NrzWG31cMdEfSi69Ec5+vqgjrP7eTU9B12d+aSkxBxwT3Ls+gJbk3Uz8AmZRfRyeR/5+FlvhZOlIngh8GUguHo8LdmfFpTlyBP2HWEXWGumy5Mj2CXfF/xxhzRfHzhinleKCu7l+4UxydSgvFkgAAAABJRU5ErkJggg==">
         </router-link>
       </div>
     </nav>
