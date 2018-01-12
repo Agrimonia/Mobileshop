@@ -5,6 +5,10 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    user: {
+      username: '',
+      token: '',
+    },
     cartTotal: 0,
     cart: {},
     sale: false,
@@ -111,6 +115,7 @@ export default new Vuex.Store({
     women: state => (state.products.filter(item => item.category === 'women')),
     men: state => (state.products.filter(item => item.category === 'men')),
     sale: state => (state.products.filter(item => item.sale === true)),
+    logined: state => state.user.token !== '',
   },
   mutations: {
     switchSale: (state) => {
@@ -131,6 +136,10 @@ export default new Vuex.Store({
         stateItem.count = 1;
         state.cart[item.name] = stateItem;
       }
+    },
+    setUserLoginState: (state, username, token) => {
+      state.user.username = username;
+      state.user.token = token;
     },
   },
 });

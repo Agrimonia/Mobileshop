@@ -35,5 +35,20 @@ export default new Router({
       name: 'Cart',
       component: Cart,
     },
+    {
+      path: '/me',
+      beforeEnter: (to, from, next) => {
+        if (!this.a.app.$store.getters.logined) {
+          next('/login');
+        }
+        next();
+      },
+    },
+    {
+      path: '/login',
+    },
+    {
+      path: '/signup',
+    },
   ],
 });
