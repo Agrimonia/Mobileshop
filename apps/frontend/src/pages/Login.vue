@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     submit() {
-      this.$store.commit('setUserLoginState', this.username, 'test token');
+      this.$store.commit('setUserLoginState', { username: this.username, token: 'test token' });
       this.$router.push('me');
     },
   },

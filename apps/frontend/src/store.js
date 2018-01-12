@@ -137,9 +137,8 @@ export default new Vuex.Store({
         state.cart[item.name] = stateItem;
       }
     },
-    setUserLoginState: (state, username, token) => {
-      state.user.username = username;
-      state.user.token = token;
+    setUserLoginState: (state, payload) => {
+      state.user = payload;
     },
   },
 });
