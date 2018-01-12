@@ -7,8 +7,12 @@ export default new Vuex.Store({
   state: {
     user: {
       username: '',
+      name: '',
       token: '',
+      phone: '12345',
+      address: ['add1', 'add2', 'add3'],
     },
+    orders: [],
     cartTotal: 0,
     cart: {},
     sale: false,
@@ -137,8 +141,15 @@ export default new Vuex.Store({
         state.cart[item.name] = stateItem;
       }
     },
-    setUserLoginState: (state, payload) => {
-      state.user = payload;
+    setUserInfo: (state, payload) => {
+      state.user.username = payload.username || state.user.username;
+      state.user.name = payload.name || state.user.name;
+      state.user.token = payload.token || state.user.token;
+      state.user.phone = payload.phone || state.user.phone;
+      state.user.address = payload.address || state.user.address;
+    },
+    newOrder: (state, order) => {
+      state.orders.push(order);
     },
   },
 });
