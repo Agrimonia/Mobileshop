@@ -15,7 +15,7 @@
       <span class="min">${{ min }}</span>
       <span class="max">${{ max }}</span>
     </div>
-    <filter-switch/>
+    <filter-switch v-if="!sale"/>
   </aside>
 </template>
 
