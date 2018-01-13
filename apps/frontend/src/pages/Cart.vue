@@ -95,8 +95,10 @@ export default {
         name: this.name,
         phone: this.phone,
         address: this.addressSelect === 'new' ? this.addressInput : this.addressSelect,
-        status: 'unpaid',
+        status: '未付款',
       });
+      this.$store.commit('clearCartContents');
+      this.$store.commit('clearCartCount');
       this.$router.push('me');
     },
   },
@@ -104,6 +106,10 @@ export default {
     usdollar(value) {
       return `${value}元`;
     },
+  },
+  mounted() {
+    this.name = this.userInfo.name;
+    this.phone = this.userInfo.phone;
   },
 };
 </script>

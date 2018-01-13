@@ -7,10 +7,13 @@ export default new Vuex.Store({
   state: {
     user: {
       username: '',
-      name: '',
+      name: '测试用户',
       token: '',
-      phone: '12345',
-      address: ['add1', 'add2', 'add3'],
+      phone: '13123456789',
+      address: [
+        '四川省成都市成华区电子科技大学沙河校区欣苑',
+        '四川省成都市高新西区西源大道2006号',
+        '四川省成都市成华区电子科技大学沙河校区信息与软件工程学院'],
     },
     orders: [],
     cartTotal: 0,
@@ -150,6 +153,9 @@ export default new Vuex.Store({
     },
     newOrder: (state, order) => {
       state.orders.push(order);
+    },
+    payForOrder: (state, orderIdx) => {
+      state.orders[orderIdx].status = '已付款';
     },
   },
 });
