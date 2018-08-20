@@ -16,10 +16,12 @@ class ProductList(APIView):
             "data": [
             {
                     "id": 1,
-                    "name": "jacket1",
-                    "price": "122.00",
-                    "img": "media/jacket1.png"
-                }
+                    "name": '绒面靴',
+                    "price": 149.99,
+                    "category": 'women',
+                    "sale": true,
+                    "article": 'shoe',
+                    "img": 'media/shoe1.png',
             ],
             "code": 200
         }
@@ -32,10 +34,18 @@ class ProductList(APIView):
         """
         希望的输入：(UTF-8 coded)
             {
-                "name": "shoes",
-                "price": 324.10,
-                "img": "media/jacket1.png"
+                "name": "绒面靴",
+                "price": 149.99,
+                "category": "women",
+                "sale": true,
+                "article": "shoe",
+                "img": "media/shoe1.png"
             }
+        预期的返回：
+        {
+            "code": 200,
+            "message": "Success!"
+        }
         """
         try:
             data = json.loads(request.body.decode('utf-8'))
@@ -50,9 +60,15 @@ class ProductList(APIView):
         if "img" not in data:
             return InputErrorMessage("Product image not provide.")
         products = Product.objects.create(
-            name=data["name"], price=data["price"], img=data["img"])
+            name=data["name"], 
+            price=data["price"], 
+            category=data["category"], 
+            sale=data["sale"], 
+            article=data["article"], 
+            img=data["img"]
+        )
         products.save()
         return JSONResponse({
             "code": 200,
-            "message": "Success!",
+            "message": "Success!"
         })
